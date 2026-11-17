@@ -1,6 +1,9 @@
 info:
-  title: Проект YaCut
-  version: 0.1.0
+  title: HotelLinks — ссылки для справочника гостя
+  description: Меню, правила проживания, маршруты и контакты.
+  version: 1.0.0
+servers:
+  - url: http://127.0.0.1:8005
 tags: []
 paths:
   /api/id/:
@@ -34,7 +37,7 @@ paths:
                   value:
                     message: '"url" является обязательным полем!'
           description: Not found
-      summary: Create Id
+      summary: Создать короткую ссылку на документ для гостя
   /api/id/{short_id}/:
     get:
       parameters:
@@ -60,7 +63,7 @@ paths:
                   value:
                     message: Указанный id не найден
           description: Not found
-      summary: Get Url
+      summary: Получить адрес документа по короткому имени
 openapi: 3.0.3
 components:
   schemas:
@@ -73,12 +76,14 @@ components:
       properties:
         url:
           type: string
+          example: https://hotel.example.com/guest/restaurant/menu.pdf
       type: object
       description: Получение ссылки по идентификатору
     create_id:
       properties:
         url:
           type: string
+          example: https://hotel.example.com/guest/restaurant/menu.pdf
         short_link:
           type: string
       type: object
@@ -87,8 +92,13 @@ components:
       properties:
         url:
           type: string
+          example: https://hotel.example.com/guest/restaurant/menu.pdf
         custom_id:
           type: string
+          maxLength: 16
+          pattern: "^[a-zA-Z0-9]{1,16}$"
+          nullable: true
+          example: menu
       type: object
       required:
           - url

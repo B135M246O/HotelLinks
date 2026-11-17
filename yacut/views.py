@@ -15,9 +15,7 @@ def get_db_object(column, query):
 
 def check_short_id(short_id):
     """Проверка уникальности нового адреса."""
-    if get_db_object(URL_map.short, short_id).first() is None:
-        return True
-    return False
+    return get_db_object(URL_map.short, short_id).first() is None
 
 
 def get_unique_short_id():

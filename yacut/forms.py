@@ -7,13 +7,13 @@ from .constants import LINK_REG
 
 class URL_mapForm(FlaskForm):
     original_link = URLField(
-        'Длинная ссылка',
+        'Ссылка на меню, правила, маршрут или контакты',
         validators=[
             DataRequired(message='Обязательное поле'),
             URL(message='Некорректная ссылка')]
     )
     custom_id = StringField(
-        'Ваш вариант короткой ссылки',
+        'Короткое имя, например menu или wifi',
         validators=[
             Optional(),
             Length(1, 16),

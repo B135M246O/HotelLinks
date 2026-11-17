@@ -1,0 +1,6 @@
+[
+  {"url":"https://hotel.example.com/guest/restaurant/menu.pdf","custom_id":"menu"},
+  {"url":"https://hotel.example.com/guest/house-rules","custom_id":"rules"},
+  {"url":"https://hotel.example.com/guest/walking-routes","custom_id":"walk"},
+  {"url":"https://hotel.example.com/guest/reception","custom_id":"contacts"}
+]

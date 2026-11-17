@@ -129,3 +129,7 @@ dmypy.json
 .pyre/
 
 .vscode
+
+*.db
+*.db-journal
+requirements-local.txt
